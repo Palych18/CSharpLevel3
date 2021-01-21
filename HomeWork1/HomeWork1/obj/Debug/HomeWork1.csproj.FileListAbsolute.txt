@@ -1,0 +1,16 @@
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\MainWindow.g.cs
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\App.g.cs
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1_MarkupCompile.cache
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1_MarkupCompile.lref
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\bin\Debug\HomeWork1.exe.config
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\bin\Debug\HomeWork1.exe
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\bin\Debug\HomeWork1.pdb
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\MainWindow.baml
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1.g.resources
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1.Properties.Resources.resources
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1.csproj.GenerateResource.cache
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1.csproj.CoreCompileInputs.cache
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1.exe
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1.pdb
+G:\C#\CSharpLevel3\HomeWork\HomeWork1\HomeWork1\obj\Debug\HomeWork1.csprojAssemblyReference.cache
