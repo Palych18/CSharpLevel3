@@ -1,0 +1,13 @@
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\bin\Debug\FileTabControl.dll
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\bin\Debug\FileTabControl.pdb
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl.csprojAssemblyReference.cache
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\TabSwitcher.g.cs
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl_MarkupCompile.cache
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl_MarkupCompile.lref
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\TabSwitcher.baml
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl.g.resources
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl.Properties.Resources.resources
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl.csproj.GenerateResource.cache
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl.csproj.CoreCompileInputs.cache
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl.dll
+G:\C#\CSharpLevel3\HomeWork\MyNotepad\FileTabControl\obj\Debug\FileTabControl.pdb
