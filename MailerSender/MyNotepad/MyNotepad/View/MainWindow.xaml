@@ -1,0 +1,150 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyNotepad"
+        xmlns:vm="clr-namespace:MyNotepad.ViewModel"
+        x:Class="MyNotepad.MainWindow"
+        xmlns:FileTabControl="clr-namespace:FileTabControl;assembly=FileTabControl" 
+        xmlns:FileSaveControl="clr-namespace:FileSaveControl;assembly=FileSaveControl"
+        mc:Ignorable="d"
+        Title="Блокнот" Height="600" Background="#FFB1BCFF" Foreground="White" Width="500" Icon="/Image/Icon.png">
+    <Grid>
+        <TabControl x:Name="tabControl" Margin="10,10,10,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="474" Background="#FFB7B5CB">
+
+            <TabItem x:Name="nameTab" Width="153" HorizontalAlignment="Left" Margin="0,0,0,0">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3" FontWeight="Bold"><Run Text="Почта"/></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Label Content="Введите почту отправителя" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Height="40" Width="269" FontWeight="Bold" FontSize="18" Foreground="#FF130D91"/>
+                    <Grid>
+                        <TextBox x:Name="tbSender" Height="32" Width="296" HorizontalAlignment="Center" Margin="83,65,87,343" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Background="White"/>
+                        <Button x:Name="btnClearSender" HorizontalAlignment="Right" Margin="0,65,55,250" VerticalAlignment="Top" Width="32" Height="32" Click="btnClearSender_Click" ToolTip="Очистить вводимые данные" Foreground="Black" BorderBrush="#FFB7B5CB" Background="#FFDDDDDD">
+                            <StackPanel Orientation="Horizontal" Height="32" Width="32">
+                                <Image Source="/Image/Clear.png" Height="22" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4" Width="26" RenderTransformOrigin="0.346,0.455"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                    <Label Content="Введите почту получателя" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,112,0,0" VerticalAlignment="Top" Height="40" Width="247" FontWeight="Bold" FontSize="18" Foreground="#FF130D91"/>
+                    <Grid Margin="0,0,0,0">
+                        <TextBox x:Name="tbAdressee" Height="32" Width="296" HorizontalAlignment="Center" Margin="83,159,87,249" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" CaretBrush="Black" Background="White"/>
+
+                        <Button x:Name="btnClearAdressee" HorizontalAlignment="Right" Margin="0,159,55,0" VerticalAlignment="Top" Width="32" Height="32" Click="btnClearAdressee_Click" ToolTip="Очистить вводимые данные" Background="#FFDDDDDD" Foreground="Black" BorderBrush="#FFB7B5CB">
+                            <StackPanel Orientation="Horizontal" Height="31" Width="32">
+                                <Image Source="/Image/Clear.png" Height="22" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4" Width="24"/>
+                            </StackPanel>
+                        </Button>
+                        <TextBox x:Name="tbMessage" Width="387" HorizontalAlignment="Left" Margin="37,256,0,88" HorizontalContentAlignment="Left" FontSize="14" BorderThickness="1"/>
+                        <Button x:Name="btnClearMessage" HorizontalAlignment="Right" Margin="0,256,10,0" VerticalAlignment="Top" Width="32" Height="96"  ToolTip="Очистить вводимые данные" Click="btnClearMessage_Click" BorderBrush="#FFB7B5CB" Background="#FFDDDDDD">
+                            <StackPanel Orientation="Horizontal" Height="31" Width="32">
+                                <Image Source="/Image/Clear.png" Height="22" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4" Width="24"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+
+                    <Button x:Name="btnAccess"  HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" Width="200" Height="35" Click="btnAccess_OnClick">
+                        <StackPanel Orientation="Horizontal" Height="32" Width="200">
+                            <Label Content="Отправить" Width="119" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                            <Image Source="/Image/Enter.png" Height="22" HorizontalAlignment="Center" Margin="10,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Label Content="Введите сообщение" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,203,0,0" VerticalAlignment="Top" Height="40" Width="198" FontWeight="Bold" FontSize="18" Foreground="#FF130D91"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="dataTimeTab" Width="{Binding ActualWidth, ElementName=nameTab}" HorizontalAlignment="Left" Margin="0,0,0,0">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3" FontWeight="Bold"><Run Text="Дата\Время"/></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <RichTextBox x:Name="rtbNotepad" Margin="5,5,5,0" VerticalAlignment="Top" Height="238" Block.LineHeight="1">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text=""/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <Label Content="Вставить" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="40" Width="100" FontWeight="Bold" FontSize="18" Foreground="#FF130D91"/>
+                    <Button x:Name="btnPasteDate" HorizontalAlignment="Left" Margin="50,320,0,0" VerticalAlignment="Top" Width="100" Height="32 " ToolTip="Вставить текущую дату" Click="btnPasteDate_Click">
+                        <StackPanel Orientation="Horizontal" Height="30" Width="100">
+                            <Label Content="Дату" Width="58" HorizontalContentAlignment="Center"/>
+                            <Image Source="/Image/Calendar.png" Height="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnPasteTime" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=btnPasteDate}" Height="{Binding ActualHeight, ElementName=btnPasteDate}" ToolTip="Вставить текущее время" Click="btnPasteTime_Click">
+                        <StackPanel Orientation="Horizontal" Height="30" Width="100">
+                            <Label Content="Время" Width="58" HorizontalContentAlignment="Center"/>
+                            <Image Source="/Image/Time.png" Height="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnClear" HorizontalAlignment="Right" Margin="0,320,50,0" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=btnPasteDate}" Height="{Binding ActualHeight, ElementName=btnPasteDate}" ToolTip="Очистить экран" Click="btnClear_Click">
+                        <StackPanel Orientation="Horizontal" Height="30" Width="100">
+                            <Label Content="Очистить" Width="65" HorizontalContentAlignment="Center"/>
+                            <Image Source="/Image/Clear.png" Height="22" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4" Width="24"/>
+                        </StackPanel>
+                    </Button>
+
+                    <FileSaveControl:TabSaveControl HorizontalAlignment="Center" Margin="0,372,0,10" Height="33" Width="250" />
+
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="journalTab" Width="{Binding ActualWidth, ElementName=nameTab}" HorizontalAlignment="Right" Margin="0,0,0,0">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3" FontWeight="Bold"><Run Text="Журнал"/></TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <DataGrid x:Name="dgGrid"
+			           Margin="5,10,5,68"
+			           AutoGenerateColumns="False"
+			           IsReadOnly="True"
+			           ItemsSource="{Binding MailAdressList}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Отправитель"
+							    Width="120" 
+							    Binding="{Binding Sender}"/>
+                            <DataGridTextColumn Header="Получатель" 
+							    Width="120" 
+							    Binding="{Binding Adressee}" />
+                            <DataGridTextColumn Header="Сообщение" 
+							    Width="*" 
+							    Binding="{Binding Message}" />
+                            </DataGrid.Columns>
+                       </DataGrid>
+                <Button x:Name="btnPaste" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top" Width="130" Height="32" Click="btnPaste_Click" ToolTip="Вставить данные в журнал">
+                        <StackPanel Orientation="Horizontal" Width="130">
+                            <Label Content="Вставить" Width="89" HorizontalContentAlignment="Center" FontWeight="Bold" Height="27"/>
+                            <Image Source="/Image/Paste.png" Height="22" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnDelete" HorizontalAlignment="Right" Margin="0,392,10,0" VerticalAlignment="Top" Width="130" Height="32"  ToolTip="Очистить журнал" Click="btnDelete_Click">
+                        <StackPanel Orientation="Horizontal" Height="30" Width="100">
+                            <Label Content="Удалить" Width="65" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+                            <Image Source="/Image/Delete.png" Height="22" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4" Width="24"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="btnClearJournal" HorizontalAlignment="Center" Margin="0,392,0,0" VerticalAlignment="Top" Width="130" Height="32"  ToolTip="Очистить журнал" Click="btnClearJournal_Click">
+                        <StackPanel Orientation="Horizontal" Height="30" Width="100">
+                            <Label Content="Очистить" Width="65" HorizontalContentAlignment="Center" FontWeight="Bold"/>
+                            <Image Source="/Image/Clear.png" Height="22" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,4" Width="24"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <FileTabControl:TabSwitcher HorizontalAlignment="Center" Height="41" Margin="71,507,71,0" VerticalAlignment="Top" Width="350" btnBackClick="TabSwitcher_btnBackClick" btnNextClick="TabSwitcher_btnNextClick"/>
+    </Grid>
+</Window>
