@@ -1,0 +1,57 @@
+1. Выполнить без использования среды разработки, используя только ручку и лист бумаги, задачу 
+на написание консольного приложения нахождения факториала числа N.
+
+public int Factorial(int n)
+        {
+            int res = n;
+            if (n == 0 || n == 1)
+            {
+                return 1;
+            }
+
+            while (n > 1)
+            {
+                res *= (n - 1);
+                n--;
+            }
+
+            return res;
+        }
+
+2. Есть ли проблемы в следующем коде?
+
+int i = 1;
+object obj = i;
+++i;
+Console.WriteLine(i);
+Console.WriteLine(obj);
+Console.WriteLine((short)obj);
+
+Проблема в невозможности выполнить преобразование типов int в short.
+
+3. Есть таблица Users. Столбцы в ней — Id, Name. Написать SQL-запрос, 
+который выведет имена пользователей, начинающиеся на 'A' и встречающиеся 
+в таблице более одного раза, и их количество.
+
+SELECT [Name],
+COUNT(*) AS [count]
+FROM[TestDB].[dbo].[Users]
+WHERE[Name] LIKE 'А%'
+GROUP BY[Name]
+HAVING COUNT(*) > 1
+
+4. Каков результат вывода следующего кода?
+
+private enum SomeEnum
+{
+    First = 4,
+    Second,
+    Third = 7
+}
+static void Main(string[] args)
+{
+    Console.WriteLine((int)SomeEnum.Second);
+}
+
+Результатом вывода данного кода будет число 5, так как после заданного значения 
+следующее идёт +1.
